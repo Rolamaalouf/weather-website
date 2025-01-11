@@ -1,29 +1,81 @@
-import hotbg from './assets/hot.jpg'
-import coldbg from './assets/cold.jpg'
+import hotBg from "./assets/hot.jpg";
+import coldBg from "./assets/cold.jpg";
+import Descriptions from "./components/Descriptions";
+import { useEffect, useState } from "react";
+import { getFormattedWeatherData } from "./weatherService";
 
 function App() {
+  const [city, setCity] = useState("Beirut");
+  const [weather, setWeather] = useState(null);
+  const [units, setUnits] = useState("metric");
+  const [bg, setBg] = useState(hotBg);
+
+
+  useEffect(() => {
+    const fetchweatherData = async () => {
+  const data = await getFormattedWeatherData('Dubai');
+  setWeather(data); // Add this line to update weather state
+   // Ensure data and temp are valid
+   if (data && typeof data.temp === 'number') {
+    const threshold = units === "metric" ? 20 : 60;
+    if (data.temp <= threshold) {
+      setBg(coldBg);
+    } else {
+      setBg(hotBg);
+    }
+  } else {
+    console.error("Invalid temperature data:", data);
+  }
+};
+    fetchweatherData();
+  }, [units, city]);
+
+  const handleUnitsClick = (e) => {
+    const button = e.currentTarget;
+    const currentUnit = button.innerText.slice(1);
+
+    const isCelsius = currentUnit === "C";
+    button.innerText = isCelsius ? "°F" : "°C";
+    setUnits(isCelsius ? "metric" : "imperial");
+  };
+
+  const enterKeyPressed = (e) => {
+    if (e.keyCode === 13) {
+      setCity(e.currentTarget.value);
+      e.currentTarget.blur();
+    }
+  };
+
   return (
-   <div className="app" style={{backgroundImage: `url(${coldbg})`}}> 
+   <div className="app" style={{backgroundImage: `url(${coldBg})`}}> 
    <div className="overlay">
+   {weather && (
     <div className="container">
       <div className="section section__inputs">
-        <input type="text" name="city" placeholder="Enter City..."/>
-      <button>°F</button>
+        <input onKeyDown={enterKeyPressed}
+        type="text"  
+        placeholder="Enter City..."/>
+      <button onClick={(e) => handleUnitsClick(e)}>°F</button>
       </div>
       <div className="section section__temperature">
        <div className="icon">
-       <h3>Beirut , LB</h3>
-       <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="weather icon"
-       />
-       <h3>Cloudy</h3>
-       </div>
-       <div className="temperature">
-       <h1>34°C</h1>
-       </div>
-      </div>
+       <h3>{`${weather.name}, ${weather.country}`}</h3>
+       <img src={weather.iconURL} alt="weatherIcon" />
+                <h3>{weather.description}</h3>
+              </div>
+              <div className="temperature">
+                <h1>{`${weather.temp.toFixed()} °${
+                  units === "metric" ? "C" : "F"
+                }`}</h1>
+              </div>
+            </div>
+        {/* bottom description */}
+        <Descriptions weather={weather} units={units} />
+          </div>
+        )}
     </div>
-   </div>
-   </div>
+    </div>
+   
   );
 }
 
