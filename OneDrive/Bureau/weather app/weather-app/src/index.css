@@ -1,0 +1,21 @@
+:root {
+    --section-overlay:rgba(0, 0, 0, 0.7);
+    --background-overlay: rgba(0, 0, 0, 0.2) ;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.app {
+    width: 100%;
+   height: 100vh;
+   background-position: center;
+   background-size: cover;
+}
+.overlay {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background-overlay);
+}
