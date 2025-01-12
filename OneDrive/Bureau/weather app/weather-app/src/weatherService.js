@@ -6,39 +6,41 @@ const makeIconURL = (iconId) =>
 const getFormattedWeatherData = async (city, units = "metric") => {
     const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=${units}`;
     
-    // Make the fetch request
-    const response = await fetch(URL);
+    try {
+        const response = await fetch(URL);
+        
+        if (!response.ok) {
+          throw new Error(`Error fetching data: ${response.statusText}`);
+        }
     
-    // Check if the response is okay
-    if (!response.ok) {
-        throw new Error(`Error fetching data: ${response.statusText}`);
-    }
+        const data = await response.json();
     
-    const data = await response.json();
+        const {
+          weather,
+          main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
+          wind: { speed },
+          sys: { country },
+          name,
+        } = data;
     
-    const {
-        weather,
-        main: { temp, feels_like, temp_min, temp_max, pressure, humidity },
-        wind: { speed },
-        sys: { country },
-        name,
-    } = data;
-
-    const { description, icon } = weather[0];
-
-    return {
-        description,
-        iconURL: makeIconURL(icon),
-        temp,
-        feels_like,
-        temp_min,
-        temp_max,
-        pressure,
-        humidity,
-        speed,
-        country,
-        name,
+        const { description, icon } = weather[0];
+    
+        return {
+          description,
+          iconURL: makeIconURL(icon),
+          temp,
+          feels_like,
+          temp_min,
+          temp_max,
+          pressure,
+          humidity,
+          speed,
+          country,
+          name,
+        };
+      } catch (error) {
+        console.error("Error in fetching weather data:", error);
+        throw error; // Re-throw error for further handling
+      }
     };
-};
-
 export { getFormattedWeatherData };
