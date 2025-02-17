@@ -1,0 +1,144 @@
+/* General Styling for About Us Page */
+.about-us-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  /* Heading Styles */
+  h1, h2 {
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  h2 {
+    font-size: 28px;
+    margin-top: 15px;
+  }
+  
+  /* Section Styles */
+  section {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Our Story Section */
+  .our-story {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .our-story img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  /* Gallery Section */
+  .gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .gallery .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
+  }
+  
+  .gallery .carousel img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  /* Mission, Vision, and Go Padel */
+  .mission, .vision, .go-padel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .mission img, .vision img, .go-padel img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .go-padel button {
+    background-color: #FF5722;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .go-padel button:hover {
+    background-color: #e64a19;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-us-container {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 30px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    .our-story img, .mission img, .vision img, .go-padel img {
+      max-width: 100%;
+    }
+  
+    .gallery .carousel {
+      flex-direction: row;
+      gap: 10px;
+    }
+  
+    .gallery .carousel img {
+      width: 100%;
+    }
+  
+    .go-padel button {
+      width: 100%;
+    }
+  }
+  .our-story {
+    background: linear-gradient(to right, #D8D2ED, white);  /* Add the gradient */
+    padding: 20px;  /* Add some padding */
+    color: #333;  /* Set text color */
+    border-radius: 10px;  /* Optional: Add rounded corners */
+  }

@@ -1,0 +1,155 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.storyimage1{
+  margin-left: 40px;
+}
+
+/* General Styling for About Us Page */
+.about-us-container1 {
+  width: 100%;
+  min-height: 100px;
+  padding: 20px;
+  background: linear-gradient(to bottom, #D8D2ED, white);
+  display: grid;
+  gap: 3%;
+  overflow: auto;
+}
+
+/* Our Story Section */
+.our-story1 {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  align-items: center;
+  padding-top: 8%;
+}
+.storytitle1 {
+  text-align: center;
+}
+
+/* Gallery Section */
+.thegallery1 {
+  text-align: center;
+  gap: 20%;
+}
+.gallery-carousel {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.carousel-image {
+  width: 100%;
+  max-width: 600px;
+  height: 600px;
+  object-fit: fill;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix Slick Arrows */
+.slick-prev, .slick-next {
+  z-index: 10;
+  font-size: 24px;
+  color: black;
+}
+.slick-prev:before, .slick-next:before {
+  color: black !important;
+}
+
+/* Mission, Vision, and Go Padel */
+.all11 {
+  display: flex;
+  flex-direction: column;
+  gap: 15%;
+  align-items: center;
+}
+.section {
+  width: 70%;
+  padding: 40px;
+  text-align: center;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 100px;
+}
+
+.mission1, .vision1, .gopadel1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  max-width: 600px;
+  background-color: white;
+  text-align: center;
+  padding: 50px 40px;
+  position: relative;
+}
+
+.mission1 {
+  border: 2px solid #C3A3EC;
+  box-shadow: -3px -4px 0 1px #C3A3EC;
+  align-self: flex-start;
+}
+
+.vision1 {
+  border: 2px solid #A3D5EC;
+  box-shadow: 3px -4px 0 1px #A3D5EC;
+  align-self: flex-end;
+}
+
+.gopadel1 {
+  border: 2px solid #C3A3EC;
+  box-shadow: -3px 4px 0 1px #C3A3EC;
+  align-self: flex-start;
+  margin-bottom: 300px;
+}
+
+.mission1 img, .vision1 img, .gopadel1 img {
+  width: 120px;
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.vision1 img {
+  left: -60px;
+  right: auto;
+}
+
+.buttonpadel {
+  padding: 10px 15px;
+  background-color: #BFE0EE;
+  border: none;
+  box-shadow: 3px 4px 0 1px #5F687C;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .our-story1 {
+    flex-direction: column;
+  }
+  .mission1, .vision1, .gopadel1 {
+    width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mission1 img, .vision1 img, .gopadel1 img {
+    width: 80px;
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+    margin-top: 15px;
+  }
+  .gallery-carousel {
+    width: 100%;
+  }
+}

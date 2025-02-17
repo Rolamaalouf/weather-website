@@ -1,0 +1,49 @@
+.footer {
+    width: 60vw; /* Full width */
+    bottom:10px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    color: white;
+    height: 150px;
+  }
+  
+  .subscribe-input {
+    width: 150px;
+    padding: 8px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-logo {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .icon {
+    height: 80px;
+    width: 80px;
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  }
+  
+  .footer-form p{
+    text-align: center;
+    color: black;
+  }

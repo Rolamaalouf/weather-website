@@ -1,0 +1,222 @@
+/* Reset margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Landing Page */
+.landing-page {
+  width: 100vw;
+  background: linear-gradient(180deg, #FFFFFF 88.68%, rgba(163, 213, 236, 0.7) 94.83%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.landing-page h1 {
+  font-size: 100px;
+  align-items: flex-start;
+  margin-top: 0; /* Optional: to remove any space above */
+  padding-top: 20px; /* Adjust to elevate the title */
+}
+.main h3{
+  font-size: 50px;
+  font-style: italic;
+}
+.landing-page h2 {
+  font-size: 70px;
+  align-items: flex-start;
+  margin-top: -20px; /* Optional: reduce space between the title and subtitle */
+  padding-top: 10px; /* Optional: adjust space above subtitle */
+}
+
+/* Hero Section */
+.hero {
+  width: 100%;
+  height: 700px; /* Fixed height */
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: center;
+  text-align: center;
+  padding-top: 50px; /* Adjust to raise the title and subtitle */
+}
+.hero {
+  position: relative;             /* Ensure the hero section is the positioning context */
+  height: 100vh;                 /* Full height hero section */
+  background-size: cover;        /* Cover the entire section */
+  background-position: center;    /* Center the background image */
+}
+
+
+.ball-button {
+  position: absolute;             /* Position it absolutely within the hero */
+  bottom: -20px;                   /* 30px from the bottom */
+  left: 50%;                     /* Center horizontally */
+  transform: translateX(-50%);   /* Adjust for the width of the button */
+  cursor: pointer;               /* Pointer cursor on hover */
+  display: flex;                 /* Flexbox layout */
+  align-items: center;           /* Center items vertically */
+  justify-content: center;       /* Center items horizontally */
+}
+
+.ball-image {
+  width: 300px;                   /* Adjust size of the ball image (make it larger) */
+  height: 300px;                  /* Adjust size of the ball image (make it larger) */
+}
+
+.ball-text {
+  position: absolute;             /* Position text over the ball */
+  color: black;                  /* Text color */
+  font-size: 16px;               /* Font size */
+  font-weight: bold;             /* Bold text */
+  text-align: center;            /* Center text */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Optional: add shadow for visibility */
+}
+.hero .hero-content {
+  z-index: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
+}
+
+.hero-content h1,
+.hero-content h2 {
+  margin: 5px 0; /* Margin for better spacing */
+}
+
+/* Tagline Section */
+.tagline {
+  margin: 100px 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 180px !important;
+  font-weight: bold;
+}
+
+/* Main Section */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 120px; /* Space between sections */
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.main h1 {
+  font-size: 80px;
+  font-style: italic;
+}
+
+  /* Common section styles */
+  .section {
+    width: 70%;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    background: white;
+    border-radius: 0px !important;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin-bottom: 50px;
+  }
+
+  /* Section Alignment */
+  .our-menu {
+    align-self: flex-end; /* Align to right */
+    border: 2px solid #A3D5EC;
+  }
+
+  .our-story {
+    align-self: flex-start; /* Align to left */
+    border: 2px solid #C3A3EC;
+  }
+
+  .visit-us {
+    align-self: flex-end; /* Align to right */
+    border: 2px solid #A3D5EC;
+  }
+
+  /* Section Content */
+  .section h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+
+  .section p {
+    font-size: 32px;
+    margin-bottom: 15px;
+    z-index: 2;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #A3D5EC;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  /* Image Positioning */
+  .our-menu img {
+    position: absolute;
+    bottom: -90px; /* Slightly further from the bottom */
+    left: -50px;  /* Slightly further from the left */
+    width: 200px; /* Increased size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+  .our-story img {
+    position: absolute;
+    top: 40%;
+    right: -120px; /* Adjust positioning */
+    width: 200px; /* Increased size */
+    height: auto; /* Maintain aspect ratio */
+    transform: translateY(-50%); /* Vertically center */
+  }
+
+  .visit-us img {
+    position: absolute;
+    top: -50px; /* Slightly further from the top */
+    left: -70px; /* Slightly further from the left */
+    width: 200px; /* Increased size */
+    height: auto; /* Maintain aspect ratio */
+  }
+
+.our-story .btn{
+  background-color: #C3A3EC;
+}
+/* Hero Section */
+.hero {
+  position: relative;             /* Ensure the hero section is the positioning context */
+  height: 100vh;                 /* Full height hero section */
+  background-size: cover;        /* Cover the entire section */
+  background-position: center;    /* Center the background image */
+  overflow: hidden;              /* Hide overflow to prevent pseudo-element from showing outside */
+}
+
+/* Add a pseudo-element for the blurred edges */
+.hero::before {
+  content: '';                   /* Necessary for pseudo-elements */
+  position: absolute;            /* Position it absolutely within the hero */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: inherit;          /* Inherit the background properties */
+  z-index: 0;                   /* Place it behind the content */
+  pointer-events: none;         /* Prevent interaction with the pseudo-element */
+  filter: blur(20px);           /* Apply the blur effect */
+  mask-image: radial-gradient(circle, transparent 50%, black 100%); /* Create a mask to control blur */
+}
+
+.hero .hero-content {
+  position: relative;            /* Position content relative to the hero */
+  z-index: 1;                   /* Ensure content is above the blurred background */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Optional: text shadow for contrast */
+}

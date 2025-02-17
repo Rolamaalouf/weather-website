@@ -1,0 +1,119 @@
+/* Ensure the gradient applies only to Contact Us */
+.contactus-page {
+  min-height: 100vh; /* Full page height */
+  width: 100vw; /* Full viewport width */
+  background: linear-gradient(to bottom, #D8D2ED, white) !important ;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure Contact Us content does not inherit other styles */
+.contactus {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.getintouch {
+    display: grid;
+    margin-top: 23%;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto; /* Two rows: one for the header and one for the form */
+    align-items: start; /* Align items at the top */
+    justify-items: center; /* Center the content horizontally */
+    width: 100%;
+    max-width: 400px;
+    height: auto; /* Adjust height based on content */
+    text-align: center;
+    gap: 0px;
+
+}
+
+
+.getintouch .header2 h2 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 20px; /* Add space between the header and the form */
+  }
+.form {
+    padding: 20px 50px ;
+    display: grid;
+    grid-template-rows: auto; /* Auto height based on content */
+    align-items: center;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 6px 15px #BFE0EE;
+    gap: 10px;
+    height: auto; /* Allow the form to adjust its height based on content */
+    margin: 0; /* Ensure no margin is pushing it down */
+}
+
+/* Label styling to position it above the input */
+label {
+    
+    margin-bottom: 5px;
+    text-align: left; 
+    margin-bottom: 10px;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #C3A3EC;
+    box-shadow: 0 6px 15px #C3A3EC;
+    margin-bottom: 10px;
+  }
+
+  textarea{
+    width: 100%;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 15px #BFE0EE;
+    margin-bottom: 10px;
+    height:50px;
+  }
+
+/* Submit button styling */
+.button1 {
+    padding: 10px 15px;
+    background-color: #BFE0EE;
+    border: none;
+    box-shadow: 3px 4px 0 1px  #5F687C;
+    cursor: pointer;
+    color: white;
+  }
+  
+  button:hover {
+    background-color: #b4aad3;
+  }
+  
+  .location{
+    margin-top: 30px;
+    justify-items: center; /* Center the content horizontally */
+    width: 100%;
+    max-width: 420px;
+    height: auto; /* Adjust height based on content */
+    box-shadow: 0 6px 15px #BFE0EE;
+    background: #fff;
+    gap:0px;
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: 1fr; 
+    justify-content: start;
+    align-content: space-around;
+    align-items: center;
+    justify-items: stretch;
+    margin-bottom: 100px;
+    
+    
+  }
+  .location h2 {
+    text-align: center; 
+    font-size: 4rem;
+  }

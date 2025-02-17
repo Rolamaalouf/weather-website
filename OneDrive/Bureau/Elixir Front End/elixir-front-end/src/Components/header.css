@@ -1,0 +1,51 @@
+/* Reset body and html margins */
+body, html {
+    margin: 0;                    /* Remove default margins */
+    padding: 0;                   /* Remove default paddings */
+}
+
+.header {
+    position: absolute;
+    margin-top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;                    /* Full width */
+    z-index: 10;                    /* Ensures it appears above other elements */
+    display: flex;
+    align-items: center;            /* Center items vertically */
+    justify-content: center;        /* Center items horizontally */
+    padding: 5px 5px;
+    border: 1px solid rgba(211, 211, 211, 0.5); /* Light grey border */
+    border-radius: 8px;           /* Rounded corners */
+    box-shadow: 0 4px 4px rgba(211, 211, 211, 0.5); /* Shadow effect */
+    backdrop-filter: blur(10px);  /* Blur effect for background */
+    background: transparent;     
+    width: 95%;  
+    margin-left: 35px;                 /* Set the width to 90% */
+    z-index: 1000;                /* Ensure it's on top of other elements */
+}  
+
+/* Styling for each navigation link */
+.nav-item {
+    flex: 1;                        /* Make each nav item take equal width */
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2rem;;
+    text-align: center;            
+    transition: color 0.3s ease;
+    padding: 15px 0;
+}
+
+.nav-item:hover {
+    color: white;                 /* Change color on hover */
+}
+
+/* Style for the logo image */
+.logo {
+    margin-right: auto;             /* Push nav items to the right */
+}
+
+.logo img {
+    height: 80px;                   /* Adjust logo height */
+}
